@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:isro_quiz/constants.dart';
+import 'package:isro_quiz/screens/study_dashboard.dart';
 import 'package:isro_quiz/screens/welcome_screen.dart';
 import 'package:isro_quiz/widgets/rounded_button.dart';
 import 'package:lottie/lottie.dart';
@@ -22,9 +23,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         elevation: 0,
         centerTitle: true,
         automaticallyImplyLeading: false,
-        actionsIconTheme: IconThemeData(
-          color: Colors.black54,
-        ),
+        actionsIconTheme: kAppBarIconTheme,
         actions: [
           IconButton(
             onPressed: () async {
@@ -36,9 +35,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ],
         title: Text(
           "Hi, ${args.name.split(" ")[0]}  👋",
-          style: const TextStyle(
-            color: Colors.black87,
-          ),
+          style: kAppBarTextStyle,
         ),
       ),
       body: Padding(
@@ -61,6 +58,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             RoundedButton(
               text: "Let's Study",
+              onPress: () {
+                Navigator.pushNamed(context, StudyDashboard.id);
+              },
               colour: kColorSecondary,
             )
           ],
