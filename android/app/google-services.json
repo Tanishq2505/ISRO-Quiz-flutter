@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "255677163248",
+    "project_id": "isro-quiz-flutter",
+    "storage_bucket": "isro-quiz-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255677163248:android:f957efa549d8a84acb4435",
+        "android_client_info": {
+          "package_name": "com.tkdev.isro_quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255677163248-rd51mmqq30a8o47h825h8tjjv9cbcnlu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXEJJsy5byje0WsB56KeQL1b0yEKMixAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255677163248-rd51mmqq30a8o47h825h8tjjv9cbcnlu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
