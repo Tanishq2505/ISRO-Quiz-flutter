@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:isro_quiz/screens/dashboard_screen.dart';
 import 'package:isro_quiz/screens/login_screen.dart';
 import 'package:isro_quiz/screens/registration_screen.dart';
+import 'package:isro_quiz/screens/study_dashboard.dart';
 import 'package:isro_quiz/screens/welcome_screen.dart';
 
 void main() {
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         LoginScreen.id: (context) => LoginScreen(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
         DashboardScreen.id: (context) => DashboardScreen(),
+        StudyDashboard.id: (context) => StudyDashboard(),
       },
     );
   }
