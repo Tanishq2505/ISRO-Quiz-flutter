@@ -35,3 +35,10 @@ const kRegistrationTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(32.0)),
   ),
 );
+
+const kAppBarTextStyle = TextStyle(
+  color: Colors.black87,
+);
+const kAppBarIconTheme = IconThemeData(
+  color: Colors.black54,
+);
