@@ -55,6 +55,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       Navigator.pushReplacementNamed(context, DashboardScreen.id,
           arguments: NameArgument(data.data()!["name"]));
     }
+    setState(() {
+      _showSpinner = false;
+    });
   }
 
   @override
