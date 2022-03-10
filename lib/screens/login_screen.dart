@@ -82,8 +82,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           .doc(user.user!.uid)
                           .get();
 
-                      Navigator.pushReplacementNamed(
-                          context, DashboardScreen.id,
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, DashboardScreen.id, (route) => false,
                           arguments: NameArgument(data.data()!["name"]));
                     }
                   } catch (e) {
