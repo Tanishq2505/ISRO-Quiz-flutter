@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:isro_quiz/constants.dart';
+import 'package:isro_quiz/screens/quiz_dashboard.dart';
 import 'package:isro_quiz/screens/study_dashboard.dart';
 import 'package:isro_quiz/screens/welcome_screen.dart';
 import 'package:isro_quiz/widgets/rounded_button.dart';
@@ -55,6 +56,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             RoundedButton(
               text: "Let's Play",
               colour: kColorPrimary,
+              onPress: () => Navigator.pushNamed(context, QuizDashboard.id),
             ),
             RoundedButton(
               text: "Let's Study",
