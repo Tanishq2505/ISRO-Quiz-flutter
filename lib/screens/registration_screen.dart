@@ -104,8 +104,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           "uid": uid,
                           "created": Timestamp.now(),
                         });
-                        Navigator.pushReplacementNamed(
-                            context, DashboardScreen.id,
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, DashboardScreen.id, (route)=>false,
                             arguments: NameArgument(name));
                       }
                     } else {
