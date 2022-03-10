@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:isro_quiz/screens/launchers_dashboard.dart';
+import 'package:isro_quiz/screens/satellite_dashboard.dart';
+import 'package:isro_quiz/screens/spacecrafts_dashboard.dart';
 
 import '../constants.dart';
+import 'centres_dashboard.dart';
 
 class StudyDashboard extends StatelessWidget {
   static const String id = "study_dashboard";
@@ -27,18 +31,25 @@ class StudyDashboard extends StatelessWidget {
             GridButton(
               title: "Spacecrafts",
               color: kColorSecondary,
+              onPress: () =>
+                  Navigator.pushNamed(context, SpacecraftDashboard.id),
             ),
             GridButton(
               title: "Launchers",
               color: kColorPrimary,
+              onPress: () =>
+                  Navigator.pushNamed(context, LaunchersDashboard.id),
             ),
             GridButton(
               title: "Customer Satellites",
               color: kColorPrimary,
+              onPress: () =>
+                  Navigator.pushNamed(context, SatelliteDashboard.id),
             ),
             GridButton(
               title: "Centres",
               color: kColorSecondary,
+              onPress: () => Navigator.pushNamed(context, CentresDashboard.id),
             ),
           ],
         ));
