@@ -29,7 +29,6 @@ class _ScoreScreenState extends State<ScoreScreen> {
   @override
   Widget build(BuildContext context) {
     dynamic subject = Get.arguments[0];
-    dynamic correctAnswer = Get.arguments[1];
     QuestionController _controller =
         Get.put(QuestionController(subject, context));
     int subCode = 1;
@@ -40,6 +39,8 @@ class _ScoreScreenState extends State<ScoreScreen> {
     } else {
       subCode = 3;
     }
+    int percentage =
+        ((_controller.numOfCorrectAns / _controller.totalMarks) * 100).round();
     return Scaffold(
       backgroundColor: kQuizBackgroundColors,
       body: Container(
@@ -58,7 +59,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
               ),
             ),
             Text(
-              "${_controller.numOfCorrectAns * 10}/${_controller.questions.length * 10}",
+              "${_controller.numOfCorrectAns}/${_controller.totalMarks}",
               style: TextStyle(
                 fontSize: 42,
                 color: Colors.grey,
@@ -66,21 +67,19 @@ class _ScoreScreenState extends State<ScoreScreen> {
             ),
             Spacer(),
             Text(
-              (_controller.numOfCorrectAns > 6)
-                  ? "CONGRATULATIONS!🥳"
-                  : "Oops, Try Again!",
+              (percentage > 74) ? "CONGRATULATIONS!🥳" : "Oops, Try Again!",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 26,
               ),
             ),
-            (_controller.numOfCorrectAns > 6)
+            (percentage > 74)
                 ? Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Image.asset('assets/subject$subCode.png'),
                   )
                 : SizedBox.shrink(),
-            (_controller.numOfCorrectAns > 6)
+            (percentage > 74)
                 ? Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Container(

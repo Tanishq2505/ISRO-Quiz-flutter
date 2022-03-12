@@ -330,8 +330,14 @@ class QuestionController extends GetxController
   int _numOfCorrectAns = 0;
   int get numOfCorrectAns => this._numOfCorrectAns;
 
+  int _totalMarks = 0;
+  int get totalMarks => this._totalMarks;
+
   @override
   void onInit() {
+    for (var question in questions) {
+      _totalMarks += question.marks;
+    }
     _animationController =
         AnimationController(duration: Duration(seconds: 10), vsync: this);
     _animation = Tween<double>(begin: 0, end: 1).animate(_animationController)
@@ -355,7 +361,7 @@ class QuestionController extends GetxController
     _isAnswered = true;
     _correctAns = question.options.indexOf(question.questionAnswer);
     _selectedAns = selectedIndex;
-    if (_correctAns == _selectedAns) _numOfCorrectAns++;
+    if (_correctAns == _selectedAns) _numOfCorrectAns += question.marks;
 
     _animationController.stop();
     update();
